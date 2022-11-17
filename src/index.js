@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { MantineProvider } from "@mantine/core";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <MantineProvider
+    withNormalizeCSS
+    withGlobalStyles
+    theme={{
+      colorScheme: "dark",
+      colors: {
+        brand: [
+          "#FFF5F5",
+          "#FFE3E3",
+          "#FFC9C9",
+          "#FFA8A8",
+          "#FF8787",
+          "#FF6B6B",
+          "#FA5252",
+          "#F03E3E",
+          "#E03131",
+          "#C92A2A",
+        ],
+      },
+      primaryColor: "brand",
+    }}
+  >
     <App />
-  </React.StrictMode>
+  </MantineProvider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
